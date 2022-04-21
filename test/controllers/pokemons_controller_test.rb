@@ -6,13 +6,13 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get pokemons_url, as: :json
+    get pokemons_url + "?page_size=2&page=0", as: :pokemons
     assert_response :success
   end
 
   test "should create pokemon" do
     assert_difference("Pokemon.count") do
-      post pokemons_url, params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type: @pokemon.type, type1: @pokemon.type1 } }, as: :json
+      post pokemons_url, params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type2: @pokemon.type2, type1: @pokemon.type1 } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pokemon" do
-    patch pokemon_url(@pokemon), params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type: @pokemon.type, type1: @pokemon.type1 } }, as: :json
+    patch pokemon_url(@pokemon), params: { pokemon: { attack: @pokemon.attack, defense: @pokemon.defense, generation: @pokemon.generation, hp: @pokemon.hp, legendary: @pokemon.legendary, name: @pokemon.name, special_attack: @pokemon.special_attack, special_defense: @pokemon.special_defense, speed: @pokemon.speed, total: @pokemon.total, type2: @pokemon.type2, type1: @pokemon.type1 } }, as: :json
     assert_response :success
   end
 

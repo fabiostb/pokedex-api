@@ -1,7 +1,10 @@
 require "test_helper"
 
 class PokemonTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "should not save Pokémon without Name" do
+    pokemon = Pokemon.new
+    assert_not pokemon.save
+  end
+
 end

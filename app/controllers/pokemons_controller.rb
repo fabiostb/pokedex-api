@@ -3,7 +3,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.limit(params[:page_size]).offset(params[:page].to_i * params[:page_size].to_i)
 
     render json: @pokemons
   end
@@ -46,6 +46,6 @@ class PokemonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :type1, :type, :total, :hp, :attack, :defense, :special_attack, :special_defense, :speed, :generation, :legendary)
+      params.require(:pokemon).permit(:name, :type1, :type2, :total, :hp, :attack, :defense, :special_attack, :special_defense, :speed, :generation, :legendary)
     end
 end

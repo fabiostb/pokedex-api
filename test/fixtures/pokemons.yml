@@ -1,29 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
-  type1: MyText
-  type: MyText
+  name: Pikachu
+  type1: PikachuType1
+  type2: PikachuType2
   total: 1
-  hp: 1
-  attack: 1
-  defense: 1
-  special_attack: 1
-  special_defense: 1
-  speed: 1
-  generation: 1
+  hp: 2
+  attack: 3
+  defense: 4
+  special_attack: 5
+  special_defense: 6
+  speed: 7
+  generation: 8
   legendary: false
 
 two:
-  name: MyText
-  type1: MyText
-  type: MyText
-  total: 1
-  hp: 1
-  attack: 1
-  defense: 1
-  special_attack: 1
-  special_defense: 1
-  speed: 1
-  generation: 1
-  legendary: false
+  name: Kakuna
+  type1: KakunaType1
+  type2: KakunaType2
+  total: 9
+  hp: 10
+  attack: 11
+  defense: 12
+  special_attack: 13
+  special_defense: 14
+  speed: 15
+  generation: 16
+  legendary: true
