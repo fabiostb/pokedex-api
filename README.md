@@ -1,24 +1,51 @@
-# README
+# Pokédex!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![This is an image](https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-black-and-white/4/4e/Pok%C3%A9dex_BW.png)
 
-Things you may want to cover:
+## A simple Ruby on Rails CRUD RESTful API 
 
-* Ruby version
+Rails 7.0.2.3\
+Puma version: 5.6.4 (ruby 3.1.1-p18) ("Birdie's Version")\
+SQLite3
 
-* System dependencies
+### Setup:
+-Create the database and import the pokemons (/lib/seeds/pokemon.csv)
+```sh
+rails db:migrate
+rails db:seed
+``` 
 
-* Configuration
+-Run the server
+```sh
+rails server
+``` 
 
-* Database creation
+### API (/pokemons):
 
-* Database initialization
+**JSON Example**:
 
-* How to run the test suite
+```json
+{
+    "name": "Pikachu",
+    "type1": "Electric",
+    "type2": "",
+    "total": 320,
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "special_attack": 50,
+    "special_defense": 50,
+    "speed": 90,
+    "generation": 1,
+    "legendary": false
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+> **Pagination**: GET /pokemons?page_size=10&page=1
 
-* Deployment instructions
+### Test:
 
-* ...
+```sh
+rails db:migrate RAILS_ENV=test
+rails test
+```
